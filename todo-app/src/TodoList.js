@@ -2,13 +2,9 @@ import React from 'react';
 import { Todo } from './Todo'
 
 export class TodoList extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
-        const list = this.props.todoList.map((todo) => (
-            <li>
+        const list = this.props.items.map((todo, i) => (
+            <li key={i}>
                 <Todo text={todo.text}
                     priority={todo.priority} 
                     dueDate={todo.dueDate} />
